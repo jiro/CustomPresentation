@@ -32,6 +32,11 @@ The idea of coordinating multiple animations was explained in the [_Advance Anim
 - Inherits from `UIPercentDrivenInteractiveTransition`
 - Conforms to the `UIViewControllerInteractiveTransitioning` protocol
 
+### Animations
+
+All transition animations are defined with `transitionAnimators` method of `PresentationAnimatedTransitioning` protocol.
+You can refer to the implementation of [SecondViewController](https://github.com/hedjirog/CustomPresentation/blob/master/CustomPresentation/SecondViewController.swift).
+
 ## Author
 
 Jiro [@hedjirog](https://twitter.com/hedjirog)
