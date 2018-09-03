@@ -2,7 +2,7 @@
 
 This application demonstrates a custom presentation that coordinates between multiple animations using [UIViewPropertyAnimator](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator) and [view controller transition APIs](https://developer.apple.com/documentation/uikit/animation_and_haptics/view_controller_transitions). 
 
-The idea of coordinating multiple animations was explained in the [_Advance Animation with UIKit_ WWDC 2017 session 230](https://developer.apple.com/videos/play/wwdc2017/230/). This application is implemented by referring to that method. 
+The idea of coordinating multiple animations was explained in the [_Advance Animation with UIKit_ WWDC 2017 session 230](https://developer.apple.com/videos/play/wwdc2017/230/). This application is implemented by referring to that approach. 
 
 ## Demo
 
