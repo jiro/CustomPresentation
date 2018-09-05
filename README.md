@@ -19,7 +19,7 @@ The idea of coordinating multiple animations was explained in the [_Advance Anim
 
 
 - Manages the presentation style
-- Adds custom views for presentaion
+- Adds custom views for presentation
 - Inherits from `UIPresentationController`
 - Conforms to the `UIViewControllerTransitioningDelegate` protocol
 
