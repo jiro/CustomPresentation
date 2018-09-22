@@ -1,6 +1,6 @@
 # CustomPresentation
 
-![Swift](https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat)
+![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)
 
 This application demonstrates a custom presentation that coordinates between multiple animations using [UIViewPropertyAnimator](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator) and [view controller transition APIs](https://developer.apple.com/documentation/uikit/animation_and_haptics/view_controller_transitions). 
