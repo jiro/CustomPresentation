@@ -23,6 +23,7 @@ class PresentationAnimationController: NSObject, UIViewControllerAnimatedTransit
 
         prepareForTransitionIfNeeded(using: transitionContext)
 
+        let duration = transitionDuration(using: transitionContext)
         let fromViewController = self.fromViewController(for: transitionContext)
         let toViewController = self.toViewController(for: transitionContext)
         let presentationController = self.presentationController(for: transitionContext)
@@ -34,8 +35,8 @@ class PresentationAnimationController: NSObject, UIViewControllerAnimatedTransit
                                                 targetViews: toViewController.transitionableViews)
         }
 
-        let prioritizedAnimators = self.prioritizedAnimators(from: animators)
-        let animator = ViewPropertyAnimatorGroup(primaryAnimator: prioritizedAnimators.primary, secondaryAnimators: prioritizedAnimators.secondary)
+        let timing = UISpringTimingParameters.init(dampingRatio: 1)
+        let animator = ViewPropertyAnimatorGroup(duration: duration, timingParameters: timing, animators: animators)
         animator.addCompletion { position in
             let didComplete = position == .end
             transitionContext.completeTransition(didComplete)

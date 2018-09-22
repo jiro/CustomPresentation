@@ -1,29 +1,39 @@
 import UIKit
 
 class ViewPropertyAnimatorGroup: NSObject, UIViewImplicitlyAnimating {
-    private let primaryAnimator: UIViewPropertyAnimator
+    private let timingAnimator: UIViewPropertyAnimator
     private var animators: [UIViewPropertyAnimator]
 
-    init(primaryAnimator: UIViewPropertyAnimator, secondaryAnimators: [UIViewPropertyAnimator]) {
-        self.primaryAnimator = primaryAnimator
-        self.animators = [primaryAnimator] + secondaryAnimators
+    init(duration: TimeInterval, timingParameters: UITimingCurveProvider, animators: [UIViewPropertyAnimator]) {
+        self.timingAnimator = UIViewPropertyAnimator(duration: duration, timingParameters: timingParameters)
+        self.animators = [timingAnimator] + animators
+        super.init()
+        setupTimingAnimator()
+    }
+
+    private func setupTimingAnimator() {
+        // Specifies a simple animation since UIViewPropertyAnimator completes immediately if animatable properties do not exist.
+        let view = UIView()
+        UIApplication.shared.keyWindow?.addSubview(view)
+        timingAnimator.addAnimations { view.alpha = 0 }
+        timingAnimator.addCompletion { _ in view.removeFromSuperview() }
     }
 
     func addCompletion(_ completion: @escaping (UIViewAnimatingPosition) -> Void) {
-        primaryAnimator.addCompletion(completion)
+        timingAnimator.addCompletion(completion)
     }
 
     var state: UIViewAnimatingState {
-        return primaryAnimator.state
+        return timingAnimator.state
     }
 
     var isRunning: Bool {
-        return primaryAnimator.isRunning
+        return timingAnimator.isRunning
     }
 
     var isReversed: Bool {
         get {
-            return primaryAnimator.isReversed
+            return timingAnimator.isReversed
         }
         set(isReversed) {
             animators.forEach { $0.isReversed = isReversed }
@@ -32,7 +42,7 @@ class ViewPropertyAnimatorGroup: NSObject, UIViewImplicitlyAnimating {
 
     var fractionComplete: CGFloat {
         get {
-            return primaryAnimator.fractionComplete
+            return timingAnimator.fractionComplete
         }
         set(fractionComplete) {
             animators.forEach { $0.fractionComplete = fractionComplete }
@@ -57,11 +67,5 @@ class ViewPropertyAnimatorGroup: NSObject, UIViewImplicitlyAnimating {
 
     func finishAnimation(at finalPosition: UIViewAnimatingPosition) {
         animators.forEach { $0.finishAnimation(at: finalPosition) }
-    }
-
-    func continueAnimation(withTimingParameters parameters: UITimingCurveProvider?, durationFactor: CGFloat) {
-        animators.forEach {
-            $0.continueAnimation(withTimingParameters: parameters, durationFactor: durationFactor)
-        }
     }
 }
