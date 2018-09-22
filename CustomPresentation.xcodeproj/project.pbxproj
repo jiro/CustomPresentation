@@ -16,7 +16,7 @@
 		4B4020F9213828780094CCDC /* PresentationTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4020F8213828780094CCDC /* PresentationTransitioning.swift */; };
 		4B4020FB213828E00094CCDC /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4020FA213828E00094CCDC /* PresentationController.swift */; };
 		4B4020FE213829550094CCDC /* PresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4020FD213829550094CCDC /* PresentationAnimationController.swift */; };
-		4B40210121382AAD0094CCDC /* CoordinatedAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40210021382AAD0094CCDC /* CoordinatedAnimator.swift */; };
+		4B40210121382AAD0094CCDC /* ViewPropertyAnimatorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40210021382AAD0094CCDC /* ViewPropertyAnimatorGroup.swift */; };
 		4B40210521382BF60094CCDC /* PresentationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B40210421382BF60094CCDC /* PresentationOperation.swift */; };
 		4B82F28D213A785600884F6E /* PresentationInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82F28C213A785600884F6E /* PresentationInteractionController.swift */; };
 		4BDE0674213B3CC30085468D /* PresentationKeyframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE0673213B3CC30085468D /* PresentationKeyframe.swift */; };
@@ -34,7 +34,7 @@
 		4B4020F8213828780094CCDC /* PresentationTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTransitioning.swift; sourceTree = "<group>"; };
 		4B4020FA213828E00094CCDC /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		4B4020FD213829550094CCDC /* PresentationAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAnimationController.swift; sourceTree = "<group>"; };
-		4B40210021382AAD0094CCDC /* CoordinatedAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedAnimator.swift; sourceTree = "<group>"; };
+		4B40210021382AAD0094CCDC /* ViewPropertyAnimatorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPropertyAnimatorGroup.swift; sourceTree = "<group>"; };
 		4B40210421382BF60094CCDC /* PresentationOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationOperation.swift; sourceTree = "<group>"; };
 		4B82F28C213A785600884F6E /* PresentationInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationInteractionController.swift; sourceTree = "<group>"; };
 		4BDE0673213B3CC30085468D /* PresentationKeyframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationKeyframe.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		4B4020FF213829D40094CCDC /* Animator */ = {
 			isa = PBXGroup;
 			children = (
-				4B40210021382AAD0094CCDC /* CoordinatedAnimator.swift */,
+				4B40210021382AAD0094CCDC /* ViewPropertyAnimatorGroup.swift */,
 			);
 			path = Animator;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 				4B4020E52138241C0094CCDC /* FirstViewController.swift in Sources */,
 				4B40210521382BF60094CCDC /* PresentationOperation.swift in Sources */,
 				4B4020F9213828780094CCDC /* PresentationTransitioning.swift in Sources */,
-				4B40210121382AAD0094CCDC /* CoordinatedAnimator.swift in Sources */,
+				4B40210121382AAD0094CCDC /* ViewPropertyAnimatorGroup.swift in Sources */,
 				4B4020E32138241C0094CCDC /* AppDelegate.swift in Sources */,
 				4B4020FB213828E00094CCDC /* PresentationController.swift in Sources */,
 			);

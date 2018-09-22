@@ -1,6 +1,6 @@
 import UIKit
 
-class CoordinatedAnimator: NSObject, UIViewImplicitlyAnimating {
+class ViewPropertyAnimatorGroup: NSObject, UIViewImplicitlyAnimating {
     private let primaryAnimator: UIViewPropertyAnimator
     private var animators: [UIViewPropertyAnimator]
 

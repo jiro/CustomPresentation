@@ -2,7 +2,7 @@ import UIKit
 
 class PresentationAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     private let operation: PresentationOperation
-    private var transitionAnimator: CoordinatedAnimator?
+    private var transitionAnimator: ViewPropertyAnimatorGroup?
 
     init(operation: PresentationOperation) {
         self.operation = operation
@@ -35,7 +35,7 @@ class PresentationAnimationController: NSObject, UIViewControllerAnimatedTransit
         }
 
         let prioritizedAnimators = self.prioritizedAnimators(from: animators)
-        let animator = CoordinatedAnimator(primaryAnimator: prioritizedAnimators.primary, secondaryAnimators: prioritizedAnimators.secondary)
+        let animator = ViewPropertyAnimatorGroup(primaryAnimator: prioritizedAnimators.primary, secondaryAnimators: prioritizedAnimators.secondary)
         animator.addCompletion { position in
             let didComplete = position == .end
             transitionContext.completeTransition(didComplete)
